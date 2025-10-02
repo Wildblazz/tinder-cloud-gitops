@@ -2,7 +2,8 @@
 
 ### Overview
 
-GitOps repository for Tinder-Cloud microservices deployment using ArgoCD. This repository contains Kubernetes manifests, ArgoCD applications, and deployment configurations for the distributed dating platform backend.
+GitOps repository for Tinder-Cloud microservices deployment using ArgoCD. 
+This repository contains Kubernetes manifests, ArgoCD applications, and deployment configurations for the distributed dating platform backend
 
 ### Repository Purpose
 
@@ -15,7 +16,7 @@ This repository manages:
 
 ### Project Context
 
-This GitOps repository is part of the [Tinder-Cloud](https://github.com/main-project-link) educational project - a backend-focused replication of Tinder's core functionality designed for learning microservice architecture patterns.
+This GitOps repository is part of the [Tinder-Cloud](https://github.com/Wildblazz/tinder-cloud.git) educational project
 
 ### Architecture Components
 
