@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: profile-service-app
-          image: profile-service:latest
+          image: testUrl/profile-service:5f015caca6dd080dd6104c292fd23c842b963149
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8082
