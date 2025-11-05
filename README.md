@@ -46,6 +46,7 @@ This GitOps repository is part of the [Tinder-Cloud](https://github.com/Wildblaz
 
 ### Manual deployment steps
 * Run minikube:
+  * `cd scripts`
   * `chmod +x minikube-init.sh`
   * `./minikube-init.sh`
   * Optionally open minikube UI: `minikube dashboard`
