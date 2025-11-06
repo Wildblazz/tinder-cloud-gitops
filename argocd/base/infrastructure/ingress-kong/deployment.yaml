@@ -60,7 +60,7 @@ spec:
             periodSeconds: 10
             failureThreshold: 3
         - name: ingress-controller
-          # Don't forget to update a tag in deploy/eks/argocd/base/infrastructure/ingress-kong/crds/kustomization.yaml
+          # Don't forget to update a tag in argocd/base/infrastructure/ingress-kong/crds/kustomization.yaml
           image: kong/kubernetes-ingress-controller:3.5.0
           args:
             - --ingress-class=kong
