@@ -10,25 +10,25 @@ apply-projects: argocd-init
 argocd-init: minikube-init
 
 minikube-init:
-	bash deploy/eks/minikube-init.sh
+	bash scripts/minikube-init.sh
 
 argocd-init:
-	bash deploy/eks/argocd-init.sh
+	bash scripts/argocd-init.sh
 
 generate-secrets:
-	bash deploy/eks/apply-secrets.sh
+	bash scripts/apply-secrets.sh
 
 # ArgoCD
 apply-projects:
-	$(KUBECTL) deploy/eks/argocd/app-projects/infrastructure.yaml
-	$(KUBECTL) deploy/eks/argocd/app-projects/tinder-cloud.yaml
+	$(KUBECTL) argocd/app-projects/infrastructure.yaml
+	$(KUBECTL) argocd/app-projects/tinder-cloud.yaml
 
 deploy-apps:
-	$(KUBECTL) deploy/eks/argocd/apps/infrastructure-app.yaml
-	$(KUBECTL) deploy/eks/argocd/apps/tinder-app.yaml
+	$(KUBECTL) argocd/apps/infrastructure-app.yaml
+	$(KUBECTL) argocd/apps/tinder-app.yaml
 
 deploy-resources:
-	$(KUSTOMIZE) deploy/eks/argocd/base/infrastructure/
-	$(KUSTOMIZE) deploy/eks/argocd/base/tinder-app/
+	$(KUSTOMIZE) argocd/base/infrastructure/
+	$(KUSTOMIZE) argocd/base/tinder-app/
 
 .PHONY: all minikube-init argocd-init generate-secrets apply-projects deploy-apps deploy-resources

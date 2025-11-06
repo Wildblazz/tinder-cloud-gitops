@@ -46,6 +46,7 @@ This GitOps repository is part of the [Tinder-Cloud](https://github.com/Wildblaz
 
 ### Manual deployment steps
 * Run minikube:
+  * `cd scripts`
   * `chmod +x minikube-init.sh`
   * `./minikube-init.sh`
   * Optionally open minikube UI: `minikube dashboard`
@@ -53,9 +54,6 @@ This GitOps repository is part of the [Tinder-Cloud](https://github.com/Wildblaz
   * `chmod +x argocd-init.sh` 
   * `./argocd-init.sh`
 * Install kustomize: `brew install kustomize`
-  * To make ArgoCd UI accessible - `kubectl port-forward svc/argocd-server -n argocd 8444:443`
-  * ArgoCd UI: `https://localhost:8444`
-  * Login: admin. Get password: `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d` -> string without % is password
 * Create ArgoCD apps:
   * `kubectl apply -f argocd/app-projects/infrastructure.yaml` 
   * `kubectl apply -f argocd/app-projects/tinder-cloud.yaml`
@@ -78,11 +76,13 @@ This GitOps repository is part of the [Tinder-Cloud](https://github.com/Wildblaz
     * recommendation-service: `docker build -t recommendation-service:latest -f be-components/recommendation-service/Dockerfile .`
     * match-service:          `docker build -t match-service:latest -f be-components/match-service/Dockerfile .`
 
-
 * Useful commands:
+  * Minikube dashboard: `minikube dashboard`
+  * To make ArgoCd UI accessible: `kubectl port-forward svc/argocd-server -n argocd 8444:443`
+  * ArgoCd UI: `https://localhost:8444`
+  * ArgoCd UI Login: `admin`. Get password: `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo`
   * Port forward minikube service (for example KeyCloak): `minikube service keycloak -n tinder-space --url`
-  * Restart all deployment in namespace: `kubectl get deployments -n infrastructure -o name | xargs kubectl rollout restart -n infrastructure
-`
+  * Restart all deployment in namespace: `kubectl get deployments -n infrastructure -o name | xargs kubectl rollout restart -n infrastructure`
 
 Shield: [![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
 

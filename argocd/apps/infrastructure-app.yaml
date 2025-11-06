@@ -9,9 +9,9 @@ spec:
   project: infrastructure
 
   source:
-    repoURL: https://github.com/Wildblazz/tinder-cloud.git
+    repoURL: https://github.com/Wildblazz/tinder-cloud-gitops.git
     targetRevision: HEAD
-    path: deploy/eks/argocd/base/infrastructure
+    path: argocd/base/infrastructure
 
   destination:
     server: https://kubernetes.default.svc
