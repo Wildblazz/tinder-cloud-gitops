@@ -84,7 +84,8 @@ This GitOps repository is part of the [Tinder-Cloud](https://github.com/Wildblaz
   * ArgoCd UI: `https://localhost:8444`
   * ArgoCd UI Login: `admin`. Get password: `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo`
   * Port forward minikube service (for example KeyCloak): `minikube service keycloak -n tinder-space --url`
-  * Restart all deployment in namespace: `kubectl get deployments -n infrastructure -o name | xargs kubectl rollout restart -n infrastructure`
+  * Restart all deployment in namespace: `kubectl get deployments -n ingress-kong -o name | xargs kubectl rollout restart -n ingress-kong`
+  * Delete all resources in the namespace `kubectl delete namespace <namespace>`
 
 Shield: [![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
 
