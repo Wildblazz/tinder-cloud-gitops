@@ -58,7 +58,9 @@ This GitOps repository is part of the [Tinder-Cloud](https://github.com/Wildblaz
   * `kubectl apply -f argocd/app-projects/infrastructure.yaml` 
   * `kubectl apply -f argocd/app-projects/tinder-cloud.yaml`
 * Generate secrets and add into cluster:
-    * See detailed instructions in the [Secrets README](argocd/secrets/README.md)
+    * See detailed instructions in the: 
+      * [Infrastructure secrets README](argocd/base/infrastructure/secrets/README.md)
+      * [Tinder-app secrets README](argocd/base/tinder-app/secrets/README.md)
 * Deploy infra apps in cluster:
     * `kubectl apply -f argocd/apps/infrastructure-app.yaml`
     * `kubectl apply -f argocd/apps/tinder-app.yaml`\
